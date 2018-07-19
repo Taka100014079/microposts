@@ -20,6 +20,7 @@
                                 <li><a href="#">My profile</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li>{!! link_to_route('logout.get', 'Logout') !!}</li>
+                                <li><a href="#">Favorite</a></li>
                             </ul>
                         </li>
                     @else
@@ -27,6 +28,12 @@
                         <li>{!! link_to_route('login', 'Login') !!}</li>
                     @endif
                 </ul>
+                <form class="navbar-form navbar-left" role="search">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="検索キーワード">
+				</div>
+				<button type="submit" class="btn btn-default">検索</button>
+			</form>
             </div>
         </div>
     </nav>

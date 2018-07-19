@@ -21,6 +21,10 @@ Route::post('follow', 'UserFollowController@store')->name('user.follow');
 Route::delete('unfollow', 'UserFollowController@destroy')->name('user.unfollow');
 Route::get('followings', 'UsersController@followings')->name('users.followings');
 Route::get('followers', 'UsersController@followers')->name('users.followers');
+
+Route::post('like', 'UserFavoritesController@store')->name('user.like');
+Route::delete('unlike', 'UserFavoritesController@destroy')->name('user.dislike');
+Route::get('liking', 'UsersController@liking')->name('users.likings');
     });
 
 Route::resource('microposts', 'MicropostsController', ['only' => ['store', 'destroy']]);

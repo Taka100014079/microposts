@@ -33,7 +33,7 @@ public function index()
 
         return view('users.show', $data);
     }
-}
+    
 
 public function followings($id)
     {
@@ -64,6 +64,26 @@ public function followings($id)
 
         return view('users.followers', $data);
     }
+    
+    public function liking($id)
+    {
+     
+    $user = User::find($id);
+        $followers = $user->feed_microposts()->paginate(10);
+
+        $data = [
+            'user' => $user,
+            'microposts' => $followers,
+        ];
+
+        $data += $this->counts($user);
+
+        return view('users.favorite', $data);
+        
+        
+    }
+    
+}
 //indexとshowのお話
 //$dataに上のUserとMicropostsを代入
 //さらにDataにCountを加入
