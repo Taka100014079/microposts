@@ -15,4 +15,5 @@ class DatabaseSeeder extends Seeder
         MicropostsTableSeeder::class,
     ]);
     $this->call(UsersTableSeeder::class);
+        $this->call(MicropostsTableSeeder::class);
     }}
